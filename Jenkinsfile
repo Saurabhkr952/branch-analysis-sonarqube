@@ -8,8 +8,7 @@ pipeline {
             }
             steps {   
                     withSonarQubeEnv(installationName: 'sq1') { 
-                    def mvn = tool 'Default Maven';    
-                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=branch-test-analysis -Dsonar.projectName='branch-test-analysis'"
+                    sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
                 }
             }
         }
