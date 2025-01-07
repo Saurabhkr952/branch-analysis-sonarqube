@@ -6,9 +6,9 @@ pipeline {
             when {
                 expression { env.GIT_BRANCH == 'origin/feature' }
             }
-            steps {
-                script {
-                    echo "Hello World from ${env.GIT_BRANCH}"
+            steps {   
+                    withSonarQubeEnv(installationName: 'sq1') { 
+                    sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
                 }
             }
         }
