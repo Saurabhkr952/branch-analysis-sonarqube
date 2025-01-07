@@ -3,11 +3,6 @@ To scan specific branch in sonarqube.
 
 ---------------------------------------------------------------------------
 
-# branch-analysis-sonarqube
-To scan specific branch in sonarqube.
-
-
-
 
 
 
