@@ -4,15 +4,14 @@ pipeline {
     stages {
         stage('Hello') {
             when {
-                // Only run this stage if the branch name is 'feature'
-                expression { env.BRANCH_NAME == 'feature' }
+                expression { env.GIT_BRANCH == 'origin/feature' }
             }
             steps {
                 script {
-                    // Get the branch name from the Jenkins environment variable BRANCH_NAME, and print it
-                    echo "Hello World from ${env.BRANCH_NAME}"
+                    echo "Hello World from ${env.GIT_BRANCH}"
                 }
             }
         }
     }
 }
+
