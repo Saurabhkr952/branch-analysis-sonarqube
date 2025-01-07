@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+        
+         stage('Branch name') {
+            steps {   
+            echo "Branch: ${env.GIT_BRANCH}"
+            }
+        }
+        
         stage('Sonar Scan feature branch') {
             when {
                 expression { env.GIT_BRANCH == 'origin/feature' }
@@ -10,18 +17,7 @@ pipeline {
                     withSonarQubeEnv(installationName: 'sq1') { 
                         sh 'chmod +x mvnw'
                         sh "./mvnw clean sonar:sonar -Dsonar.projectKey=branch-test-analysis -Dsonar.projectName='branch-test-analysis'"
-                }
-            }
-        }
-        stage('Sonar Scan prod branch') {
-            when {
-                // Only run this stage if the branch name is 'feature'
-                expression { env.BRANCH_NAME == 'feature' }
-            }
-            steps {
-                script {
-                    // Get the branch name from the Jenkins environment variable BRANCH_NAME, and print it
-                    echo "Hello World from ${env.BRANCH_NAME}"
+        //              sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'     # uses jenkins sonarqube plugins
                 }
             }
         }
