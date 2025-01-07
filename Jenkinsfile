@@ -8,7 +8,7 @@ pipeline {
             }
             steps {
                 script {
-                    echo "Hello World from ${env.BRANCH_NAME}"
+                    echo "Hello World from ${env.GIT_BRANCH}"
                 }
             }
         }
