@@ -2,14 +2,19 @@ pipeline {
     agent any
 
     stages {
+        stage('Debug') {
+            steps {
+                script {
+                    echo "Current branch name: ${env.BRANCH_NAME}"
+                }
+            }
+        }
         stage('Hello') {
             when {
-                // Only run this stage if the branch name is 'feature'
-                expression { env.BRANCH_NAME == 'feature' }
+                expression { env.BRANCH_NAME == 'origin/feature' }
             }
             steps {
                 script {
-                    // Get the branch name from the Jenkins environment variable BRANCH_NAME, and print it
                     echo "Hello World from ${env.BRANCH_NAME}"
                 }
             }
