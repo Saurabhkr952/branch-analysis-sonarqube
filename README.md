@@ -1,7 +1,11 @@
 # branch-analysis-sonarqube
 To scan specific branch in sonarqube.
 
+<<<<<<< HEAD
 ---------------------------------------------------------------------------
+=======
+
+>>>>>>> feature
 
 
 
@@ -14,4 +18,7 @@ To scan specific branch in sonarqube.
 
 
 - the pipeline job I'm using `env.GIT_BRANCH` which resolves to `origin/{BRANCH}`
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature
