@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             when {
                 // Only run this stage if the branch name is 'feature'
-                expression { env.BRANCH_NAME == 'origin/feature' }
+                expression { BRANCH_NAME == 'feature' }
             }
             steps {
                 script {
