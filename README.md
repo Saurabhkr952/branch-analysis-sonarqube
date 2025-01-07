@@ -1,5 +1,8 @@
-# branch-analysis-sonarqube
+# branch-analysis-sonarqube(Supported in Developer Version)
 To scan specific branch in sonarqube.
+
+[SonarQube Branch Analysis Official Docs](https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/branch-analysis/setting-up-the-branch-analysis/#limit-to-relevant-branches)
+
 
 
 ### In Jenkins there is two pipeline options:
