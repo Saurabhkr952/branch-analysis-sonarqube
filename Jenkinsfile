@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Sonar Scan') {
+        stage('Sonar Scan feature branch') {
             when {
                 expression { env.GIT_BRANCH == 'origin/feature' }
             }
@@ -13,7 +13,17 @@ pipeline {
                 }
             }
         }
+        stage('Sonar Scan prod branch') {
+            when {
+                // Only run this stage if the branch name is 'feature'
+                expression { env.BRANCH_NAME == 'feature' }
+            }
+            steps {
+                script {
+                    // Get the branch name from the Jenkins environment variable BRANCH_NAME, and print it
+                    echo "Hello World from ${env.BRANCH_NAME}"
+                }
+            }
+        }
     }
 }
-
-
