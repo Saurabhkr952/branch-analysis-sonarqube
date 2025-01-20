@@ -11,6 +11,5 @@ To scan specific branch in sonarqube.
 - New Item -> Multibranch Pipeline --> `env.BRANCH_NAME` return branch `master` or `branch name`
 
 
-
 - the pipeline job I'm using `env.GIT_BRANCH` which resolves to `origin/{BRANCH}`
 
