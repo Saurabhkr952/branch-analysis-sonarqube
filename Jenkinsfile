@@ -9,7 +9,8 @@ pipeline {
             steps {   
                     withSonarQubeEnv(installationName: 'sq1') { 
                         sh 'chmod +x mvnw'
-                        sh "./mvnw clean sonar:sonar -Dsonar.projectKey=branch-test-analysis -Dsonar.projectName='demo'"
+                        sh "./mvnw clean sonar:sonar"
+                        // -Dsonar.projectKey=branch-test-analysis -Dsonar.projectName='demo'
                 }
             }
         }
